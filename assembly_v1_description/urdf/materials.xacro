@@ -22,8 +22,5 @@
 <material name="cromo">
   <color rgba="0.7686274509803922 0.7725490196078432 0.7686274509803922 1.0"/>
 </material>
-<material name="acciaio_satinato">
-  <color rgba="0.6274509803921569 0.6274509803921569 0.6274509803921569 1.0"/>
-</material>
 
 </robot>
