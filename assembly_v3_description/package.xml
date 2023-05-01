@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>assembly_v2_description</name>
+  <name>assembly_v3_description</name>
   <version>0.0.0</version>
-<description>The assembly_v2_description package</description>
+<description>The assembly_v3_description package</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag -->
   <!-- Example:  -->

@@ -1,15 +1,15 @@
-assembly_v2_controller:
+assembly_v3_controller:
   # Publish all joint states -----------------------------------
   joint_state_controller:
     type: joint_state_controller/JointStateController
     publish_rate: 50
 
   # Position Controllers --------------------------------------
-  Rivoluzione 8_position_controller:
+  Rivoluzione 16_position_controller:
     type: effort_controllers/JointPositionController
-    joint: Rivoluzione 8
+    joint: Rivoluzione 16
     pid: {p: 100.0, i: 0.01, d: 10.0}
-  Rivoluzione 12_position_controller:
+  Rivoluzione 17_position_controller:
     type: effort_controllers/JointPositionController
-    joint: Rivoluzione 12
+    joint: Rivoluzione 17
     pid: {p: 100.0, i: 0.01, d: 10.0}

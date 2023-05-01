@@ -1,0 +1,9 @@
+<launch>
+
+<rosparam file="$(find assembly_v3_description)/launch/controller.yaml" command="load"/>
+<node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="assembly_v3" args="Rivoluzione 16_position_controller Rivoluzione 17_position_controller joint_state_controller "/>
+<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
+  <remap from="/joint_states" to="/assembly_v3/joint_states"/>
+</node>
+
+</launch>

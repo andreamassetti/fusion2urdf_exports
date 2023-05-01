@@ -1,0 +1,84 @@
+<?xml version="1.0" ?>
+<robot name="assembly_v3" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find assembly_v3_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find assembly_v3_description)/urdf/assembly_v3.trans" />
+<xacro:include filename="$(find assembly_v3_description)/urdf/assembly_v3.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="-0.018038652100304704 -0.00017758954956431254 0.013671035490042092" rpy="0 0 0"/>
+    <mass value="4.157460190208279"/>
+    <inertia ixx="0.031263" iyy="0.038664" izz="0.061354" ixy="-7.5e-05" iyz="9.2e-05" ixz="0.004735"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://assembly_v3_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="mdf_board"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://assembly_v3_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="link1_1">
+  <inertial>
+    <origin xyz="0.014426984058842046 -0.026318821878323344 -0.010199402470144114" rpy="0 0 0"/>
+    <mass value="0.2597469748599181"/>
+    <inertia ixx="0.000119" iyy="0.000143" izz="0.000101" ixy="2.2e-05" iyz="-2e-06" ixz="1e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.12 -0.0268 -0.155" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://assembly_v3_description/meshes/link1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="nylon_66_bianco"/>
+  </visual>
+  <collision>
+    <origin xyz="0.12 -0.0268 -0.155" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://assembly_v3_description/meshes/link1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="link2_1">
+  <inertial>
+    <origin xyz="0.07149085455262151 3.217555747561489e-07 -0.002123257140632745" rpy="0 0 0"/>
+    <mass value="0.3365868455209291"/>
+    <inertia ixx="0.00053" iyy="0.000999" izz="0.001508" ixy="0.0" iyz="0.0" ixz="-3.8e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.0645 0.002749 -0.155" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://assembly_v3_description/meshes/link2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="opaque2476666"/>
+  </visual>
+  <collision>
+    <origin xyz="0.0645 0.002749 -0.155" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://assembly_v3_description/meshes/link2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Rivoluzione 16" type="continuous">
+  <origin xyz="-0.12 0.0268 0.155" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="link1_1"/>
+  <axis xyz="-0.0 -1.0 -0.0"/>
+</joint>
+
+<joint name="Rivoluzione 17" type="continuous">
+  <origin xyz="0.0555 -0.029549 0.0" rpy="0 0 0"/>
+  <parent link="link1_1"/>
+  <child link="link2_1"/>
+  <axis xyz="1.0 0.0 -0.0"/>
+</joint>
+
+</robot>
