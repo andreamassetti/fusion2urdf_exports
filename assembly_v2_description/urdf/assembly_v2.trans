@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<robot name="assembly_v2" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+<transmission name="Rivoluzione 8_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rivoluzione 8">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Rivoluzione 8_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Rivoluzione 12_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rivoluzione 12">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Rivoluzione 12_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+</robot>
